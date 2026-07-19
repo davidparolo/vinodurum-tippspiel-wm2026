@@ -255,6 +255,48 @@
   }
   .award strong { color: var(--gold-hell); font-family: var(--display); font-weight: 600; letter-spacing: .02em; }
   .award span:last-child { font-size: .85rem; color: #d9c1a8; }
+  section.siegerehrung { margin-top: 3.4rem; color: var(--papier); }
+  section.siegerehrung h2 {
+    display: flex; align-items: center; gap: 1.2rem; max-width: 640px; margin: 0 auto .6rem;
+    font-family: var(--display); font-weight: 600; font-variant: small-caps;
+    letter-spacing: .1em; font-size: 1.8rem; color: var(--gold-hell); white-space: nowrap;
+    justify-content: center;
+  }
+  section.siegerehrung h2::before, section.siegerehrung h2::after {
+    content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,162,39,.6));
+  }
+  section.siegerehrung h2::after { background: linear-gradient(90deg, rgba(201,162,39,.6), transparent); }
+  section.siegerehrung .ehrung-lead { text-align: center; max-width: 52ch; margin: 0 auto 1.5rem;
+    font-style: italic; color: #d9c1a8; font-size: .92rem; text-wrap: balance; }
+  .podest { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem;
+    align-items: start; }
+  .plakette {
+    position: relative; text-align: center; border-radius: 12px; padding: 1.5rem 1.15rem 1.35rem;
+    background-image: var(--korn), linear-gradient(168deg, #f7efdc 0%, var(--papier) 45%, #ecdfc0 100%);
+    border: 1px solid #a9884f; color: var(--tinte);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 16px 38px rgba(0,0,0,.5);
+  }
+  .plakette::before { content: ""; position: absolute; inset: 6px; border: 1px solid rgba(169,136,79,.7);
+    border-radius: 7px; pointer-events: none; }
+  .plakette .medaille { font-size: 2.6rem; line-height: 1; filter: drop-shadow(0 3px 6px rgba(0,0,0,.35)); }
+  .plakette h3 { margin: .5rem 0 .1rem; color: var(--papier); font-family: var(--display);
+    font-weight: 600; font-variant: small-caps; letter-spacing: .05em; font-size: 1.28rem;
+    padding: .28rem .5rem; border-radius: 5px; background: linear-gradient(#8c2333, #6d1a28);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 -8px 14px rgba(0,0,0,.22); }
+  .plakette .pl-titel { margin: .5rem 0 .2rem; font-family: var(--display); font-weight: 600;
+    color: var(--gold-dunkel); font-size: 1.02rem; letter-spacing: .02em; }
+  .plakette .pl-punkte { margin: 0 0 .55rem; font-variant-numeric: tabular-nums;
+    font-size: .82rem; color: var(--tinte-sanft); letter-spacing: .04em; }
+  .plakette .pl-laudatio { margin: 0; font-size: .86rem; line-height: 1.5; text-wrap: pretty; }
+  .plakette.platz1 { border-color: var(--gold-hell);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.55), 0 0 0 1px rgba(230,201,100,.7),
+      0 0 36px rgba(201,162,39,.28), 0 16px 38px rgba(0,0,0,.5); }
+  .plakette.platz1 .medaille { font-size: 3rem; }
+  .plakette.laterne { filter: saturate(.7); }
+  .plakette.laterne h3 { background: linear-gradient(#5a4a3a, #43362a); }
+  @media (max-width: 700px) {
+    section.siegerehrung h2 { white-space: normal; letter-spacing: .06em; }
+  }
   footer { margin-top: 3.2rem; text-align: center; color: #b39a85; font-size: .8rem; font-style: italic;
     max-width: 62ch; margin-left: auto; margin-right: auto; line-height: 1.6; }
   .show-knopf { position: relative; overflow: hidden; }
@@ -847,6 +889,7 @@
 <div class="award"><span class="award-icon">🎰</span><strong>Der Systemspieler</strong><span>Steph L: Zusatzfragen 8-8-8 - eine Acht sass (acht torlose Spiele, +20), dazu im Halbfinal exakt 1:2. Das System funktioniert, welches, weiss niemand</span></div>
 <div class="award"><span class="award-icon">🎩</span><strong>Der Erste-Klasse-Irrtum</strong><span>Simon H: irrt fast nie - aber wenn, dann standesgemäss: 4:0 prognostiziert, 1:1 bekommen</span></div></div>
   </section>
+  <section class="siegerehrung"><h2>Die Siegerehrung</h2><p class="ehrung-lead">Weltmeister wurde Spanien - und im Keller entschied der 50-Punkte-Bonus das Titelrennen. Vorhang auf fürs Podest.</p><div class="podest"><div class="plakette platz1"><div class="medaille" aria-hidden="true">🥇</div><h3>Marc M</h3><p class="pl-titel">Ligameister</p><p class="pl-punkte">Nº 1 · 771 Punkte</p><p class="pl-laudatio">Wochenlang im Schatten des Leaders, am letzten Sonntag daran vorbei: Der Spanien-50er machte den Beschatter zum Meister. Geduld schlägt Vorsprung.</p></div><div class="plakette platz2"><div class="medaille" aria-hidden="true">🥈</div><h3>David</h3><p class="pl-titel">Vize-Ligameister</p><p class="pl-punkte">Nº 2 · 751 Punkte</p><p class="pl-laudatio">Vom 22. Rang auf Silber und K.O.-König mit 12,4 Punkten pro Spiel - die Maschine holte alles ausser Gold. Das Bauchgefühl war eine Winzigkeit schneller.</p></div><div class="plakette platz3"><div class="medaille" aria-hidden="true">🥉</div><h3>Remo B</h3><p class="pl-titel">Bronze</p><p class="pl-punkte">Nº 3 · 743 Punkte</p><p class="pl-laudatio">16 Volltreffer, die wenigsten getippten Tore der Liga - Catenaccio in Flaschenform zahlt sich auf dem Podest aus.</p></div><div class="plakette laterne"><div class="medaille" aria-hidden="true">🥄</div><h3>Patrick Läng</h3><p class="pl-titel">Die Rote Laterne</p><p class="pl-punkte">Nº 23 · 307 Punkte</p><p class="pl-laudatio">32 verpasste Spiele, drei Volltreffer - in Abwesenheit Letzter. Die Laterne wird zugestellt, sobald der Empfänger auffindbar ist.</p></div></div></section>
   <footer><p class="editorial">In eigener Sache: Dieses Album basiert auf über 2&#x27;300 echten Tipps und null erfundenen Zahlen. Ähnlichkeiten mit lebenden Weinflaschen sind beabsichtigt. Der Schlusspfiff ist verklungen: Spanien Weltmeister, Marc M Kellermeister - die Karten liegen, die Rechnungen sind beglichen.</p>Alle Zahlen sind echt: 104 Spiele, über 2&#x27;300 analysierte Tipps - auch die des Autors; die SRF-Zensur hat aufgegeben. Beschwerden nimmt die Ethikkommission entgegen; sie kommt zwischen 2 und 1.</footer>
 </div>
 <div id="show" hidden>
